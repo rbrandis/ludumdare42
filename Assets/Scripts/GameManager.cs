@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Round Length in Seconds")] public float RoundLength;
 
-    public List[] Floors;
-    
     public Text FundsDisplay;
     public Text RentWeeklyDisplay;
     public Text RunningCostsWeeklyDisplay;
@@ -21,9 +19,16 @@ public class GameManager : MonoBehaviour
     public int Rents = 10;
     public int RunningCosts = 100;
 
+    public Floor[] Floors;
+
     void Start()
     {
         SetText();
+
+        foreach (var floor in Floors)
+        {
+            floor.Manager = this;
+        }
     }
     
     public void OnClickCompleteWeek()
@@ -32,6 +37,7 @@ public class GameManager : MonoBehaviour
 
         Funds += (Rents - RunningCosts);
         SetText();
+
     }
 
     void SetText()
@@ -39,5 +45,10 @@ public class GameManager : MonoBehaviour
         FundsDisplay.text = "Funds: " + Funds;
         RentWeeklyDisplay.text = "Weekly Income: " + Rents;
         RunningCostsWeeklyDisplay.text = "Weekly Running Costs: " + RunningCosts;
+    }
+
+    public void FlatClicked(Flat flat)
+    {
+
     }
 }

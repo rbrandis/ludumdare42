@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor : MonoBehaviour {
-	
-	/*Floors contain flats.
+public class Floor : MonoBehaviour
+{
+
+    /*Floors contain flats.
 If a floor has at least one constructed flat, there is a cost.
 There can be 4 flats in a floor.
 You can look at floors.
@@ -12,20 +12,28 @@ When looking at a floor, there is a edit button. When you press it, you can choo
 You can only go up a floor if the floor below is already filled with flats.
 If there is already a flat, you can destroy it for a cost.*/
 
-	public GameObject Build_UI;
+    public GameObject Build_UI;
+    public List<Flat> Flats = new List<Flat>();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameManager Manager;
+    
+    void Start()
+    {
+    }
 
-	void OnMouseDown()
-	{
-		Build_UI.SetActive(true);
-	}
+    public void FlatClicked(Flat flat)
+    {
+        Manager.FlatClicked(flat);
+    }
+
+    void Update()
+    {
+
+    }
+
+    // TODO
+//    void OnMouseDown()
+//    {
+//        Build_UI.SetActive(true);
+//    }
 }

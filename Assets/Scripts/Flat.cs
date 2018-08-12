@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class Flat : MonoBehaviour {
-	
-	/*
+public class Flat : MonoBehaviour
+{
+    /*
 
 There are different types of flats.
 Different flats have different:
@@ -15,17 +14,22 @@ Different flats have different:
 
 */
 
-	public int ConstructionCost;
-	public int RunningCost;
-	public int Rent;
+    public int ConstructionCost;
+    public int RunningCost;
+    public int Rent;
+    
+    public event Action<Flat> OnFlatClicked;
+    
+    void Start()
+    {
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Update()
+    {
+    }
+
+    private void OnMouseUp()
+    {
+        if (OnFlatClicked != null) OnFlatClicked(this);
+    }
 }
