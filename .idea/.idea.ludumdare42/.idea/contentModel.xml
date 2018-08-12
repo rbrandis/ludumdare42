@@ -3,6 +3,7 @@
   <component name="ContentModelStore">
     <e p="C:\Users\Rüdiger Brandis\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_ludumdare42.1498092193.00" t="ExcludeRecursive" />
     <e p="C:\Users\Rüdiger Brandis\Desktop\ludumdare42" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Demigiant" t="Include">
@@ -19,10 +20,30 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="Substance" t="Include">
+            <e p="Livelink" t="Include">
+              <e p="Editor" t="Include">
+                <e p="Plugins" t="Include">
+                  <e p="SimpleJSON.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="ItemSelectorWindow.cs" t="Include" />
+                  <e p="MaterialPropertiesManipulation.cs" t="Include" />
+                  <e p="MaterialsManipulation.cs" t="Include" />
+                  <e p="MeshLinkEditor.cs" t="Include" />
+                  <e p="ShadersInfos.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="CameraRotate.cs" t="Include" />
           <e p="CameraVertical.cs" t="Include" />
+          <e p="ConstructionUI.cs" t="Include" />
           <e p="Flat.cs" t="Include" />
+          <e p="FlatSpace.cs" t="Include" />
           <e p="Floor.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
         </e>

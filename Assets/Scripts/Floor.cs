@@ -12,24 +12,42 @@ When looking at a floor, there is a edit button. When you press it, you can choo
 You can only go up a floor if the floor below is already filled with flats.
 If there is already a flat, you can destroy it for a cost.*/
 
-    public GameObject Build_UI;
     public List<Flat> Flats = new List<Flat>();
 
+    public FlatSpace[] Flatspaces; 
+    
     public GameManager Manager;
+
+    public GameObject FlatPrefab; 
     
     void Start()
     {
+        foreach (FlatSpace space in Flatspaces)
+        {
+            space.OnFlatClicked += OnFlatSpaceClicked;
+        }
     }
 
-    public void FlatClicked(Flat flat)
+    private void OnFlatSpaceClicked(FlatSpace obj)
     {
-        Manager.FlatClicked(flat);
+        if (obj.Occupant == null) // if this is true FlatSpace is empty
+        {
+            // TODO: fill the space
+
+            var flatObject = Instantiate(FlatPrefab);
+            flatObject.transform.position = obj.transform.position;
+            flatObject.transform.rotation = obj.transform.rotation;
+            obj.Occupant = flatObject.GetComponent<Flat>();
+        }
     }
 
-    void Update()
-    {
+    public void BuildFlat()
+         {
+             
+             
+         }
 
-    }
+
 
     // TODO
 //    void OnMouseDown()

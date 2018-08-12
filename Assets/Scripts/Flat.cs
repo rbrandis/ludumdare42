@@ -18,18 +18,5 @@ Different flats have different:
     public int RunningCost;
     public int Rent;
     
-    public event Action<Flat> OnFlatClicked;
-    
-    void Start()
-    {
-    }
 
-    void Update()
-    {
-    }
-
-    private void OnMouseUp()
-    {
-        if (OnFlatClicked != null) OnFlatClicked(this);
-    }
 }
